@@ -1,24 +1,13 @@
-.App {
-  text-align: center;
+body {
+  font-family:  'Lato', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+  margin: 0px;
+  padding: 0px;
+  background-color: #121212;
+  color: rgba(255,255,255,.87);
 }
 
+.theme {
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
 }
 
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
+/* <Header /> */
