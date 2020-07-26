@@ -69,40 +69,38 @@ class Details extends Component {
                     <div className='detailsContainer'>
                         {this.state.isShown ? (
                             
-                                  <div>
-                                    <button
-                                        className='closeButton'
-                                        onClick={this.closeEditForm}
-                                    >
-                                        <span>
-                                        Close
-                                        </span>
-                                    </button>
-                                    <div className='form'>
-                                        <form onSubmit={this.onSubmit}>
-                                            <div>
-                                                <label htmlFor="title">Title</label>
-                                                <input className='formTitle' id='title' placeholder={this.props.reduxState.singleMovieReducer.title}/>
-                                            </div>
-                                            <div>
-                                                <label htmlFor='description'>Description</label>
-                                                <textarea
-                                                type='description'
-                                                id='description'
-                                                placeholder={this.props.reduxState.singleMovieReducer.description}
-                                                />
-                                            </div>
-                                            <div>
-                                                <button className='submitUpdate' type='submit'>
-                                                Update
-                                                </button>
-                                            </div>
-                                        </form>
+                            <div>
+                            <button
+                                className='closeButton'
+                                onClick={this.closeEditForm}
+                            >
+                                <span>
+                                Close
+                                </span>
+                            </button>
+                            <div className='form'>
+                                <form onSubmit={this.onSubmit}>
+                                    <div>
+                                        <label htmlFor="title">Title</label>
+                                        <input className='formTitle' id='title' placeholder={this.props.reduxState.singleMovieReducer.title}/>
                                     </div>
-                                    </div>  
-                                
-                           
-                
+                                    <div>
+                                        <label htmlFor='description'>Description</label>
+                                        <textarea
+                                        type='description'
+                                        id='description'
+                                        placeholder={this.props.reduxState.singleMovieReducer.description}
+                                        />
+                                    </div>
+                                    <div>
+                                        <button className='submitUpdate' type='submit'>
+                                        Update
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                            </div>  
+                        
                         ) : null}
 
                         <div className='detailsTitle'>
