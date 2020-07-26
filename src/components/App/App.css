@@ -80,6 +80,21 @@ img {
   background-color: var(--ground);
   height: 70vh;
 }
+.detailsContainer button{
+  background-color: none;
+  background-image: var(--grade);
+  border: none;
+  font-size: 1.6rem;
+  letter-spacing: .1rem;
+  margin-left: 5vw;
+  color: var(--highlight);
+  width: 100px;
+  padding-top: 3px;
+  padding-bottom: 4px;
+}
+.detailsContainer button:hover{
+  font-style: italic;
+}
 .detailsTitle{
   float: left;
   width: 40vw;
@@ -97,7 +112,9 @@ img {
 .detailsGenreText{
   font-style: italic;
   margin-left: 5vw;
-  color: var(--highlight)
+  color: var(--highlight);
+  list-style-type: none;
+  line-height: 1.8rem;
 }
 .detailsDescription{
   color: var(--text);

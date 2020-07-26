@@ -38,8 +38,15 @@ function* getSingleSaga(action) {
         console.log(err);
     }
 }
-function* getGenreSaga() {
+function* getGenreSaga(action) {
     console.log('in getGenreSaga');
+    try{
+        const response = yield axios.get(`/genres/${action.payload}`);
+        yield put ({type: 'SET_GENRE', payload: response.data });
+    }catch(err){
+        console.log(err);
+        
+    }
 }
 
 // Create sagaMiddleware
