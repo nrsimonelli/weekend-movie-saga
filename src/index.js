@@ -27,10 +27,12 @@ function* getMovieSaga() {
         console.log(err);
     }
 }
-function* getSingleSaga() {
+function* getSingleSaga(action) {
     console.log('in getSingleSaga');
+    console.log('this.action.payload');
+    
     try{
-        const response = yield axios.get(`/movies/${this.action.payload}`);
+        const response = yield axios.get(`/movies/${action.payload}`);
         yield put({ type: 'SET_SINGLE', payload: response.data });
     } catch(err){
         console.log(err);

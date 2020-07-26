@@ -17,16 +17,16 @@ router.get('/', (req, res) => {
   }); 
 
   router.get('/:id', (req, res) => {
-    console.log('req.body', req.body);
+    console.log('req.body', req.params);
     
     const queryString = `
     SELECT movies.title, movies.description, movies.poster 
     FROM movies 
-    WHERE movies.id =${req.body.id};`
+    WHERE movies.id =${req.params.id};`
   
     pool.query(queryString)
       .then(result => {
-        res.send(result);
+        res.send(result.rows[0]);
       }).catch(error => {
         console.log(error);
         res.send(500);

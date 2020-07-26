@@ -21,7 +21,6 @@ class Home extends Component {
                 <Header 
                     title='Home'
                     subtitle='movie saga'
-                    return='return'
                 />
                 <div className='hailMary'>
                 {this.props.reduxState.movieReducer.map((x, key) => (
