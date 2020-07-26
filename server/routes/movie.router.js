@@ -16,4 +16,21 @@ router.get('/', (req, res) => {
       });
   }); 
 
+  router.get('/:id', (req, res) => {
+    console.log('req.body', req.body);
+    
+    const queryString = `
+    SELECT movies.title, movies.description, movies.poster 
+    FROM movies 
+    WHERE movies.id =${req.body.id};`
+  
+    pool.query(queryString)
+      .then(result => {
+        res.send(result);
+      }).catch(error => {
+        console.log(error);
+        res.send(500);
+      });
+  }); 
+
 module.exports = router;

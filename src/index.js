@@ -15,13 +15,23 @@ import { takeEvery, put } from 'redux-saga/effects';
 function* rootSaga() {
     yield takeEvery('FETCH_MOVIE', getMovieSaga);
     yield takeEvery('FETCH_GENRE', getGenreSaga);
+    yield takeEvery('FETCH_SINGLE', getSingleSaga);
 }
 
 function* getMovieSaga() {
     console.log('in getMovieSaga');
     try{
         const response = yield axios.get('/movies');
-        yield put({ type: 'SET_MOVIES', payload: response.data });
+        yield put({ type: 'SET_MOVIE', payload: response.data });
+    } catch(err){
+        console.log(err);
+    }
+}
+function* getSingleSaga() {
+    console.log('in getSingleSaga');
+    try{
+        const response = yield axios.get(`/movies/${this.action.payload}`);
+        yield put({ type: 'SET_SINGLE', payload: response.data });
     } catch(err){
         console.log(err);
     }
@@ -34,9 +44,19 @@ function* getGenreSaga() {
 const sagaMiddleware = createSagaMiddleware();
 
 // Used to store movies returned from the server
-const movies = (state = [], action) => {
+const movieReducer = (state = [], action) => {
     switch (action.type) {
-        case 'SET_MOVIES':
+        case 'SET_MOVIE':
+            console.log('action.payload = ', action.payload);
+            return action.payload;
+        default:
+            return state;
+    }
+}
+const singleMovieReducer = (state = [], action) => {
+    switch (action.type) {
+        case 'SET_SINGLE':
+            console.log('action.payload = ', action.payload);
             return action.payload;
         default:
             return state;
@@ -44,9 +64,9 @@ const movies = (state = [], action) => {
 }
 
 // Used to store the movie genres
-const genres = (state = [], action) => {
+const genreReducer = (state = [], action) => {
     switch (action.type) {
-        case 'SET_GENRES':
+        case 'SET_GENRE':
             return action.payload;
         default:
             return state;
@@ -56,8 +76,9 @@ const genres = (state = [], action) => {
 // Create one store that all components can use
 const storeInstance = createStore(
     combineReducers({
-        movies,
-        genres,
+        movieReducer,
+        genreReducer,
+        singleMovieReducer
     }),
     // Add sagaMiddleware to our store
     applyMiddleware(sagaMiddleware, logger),
