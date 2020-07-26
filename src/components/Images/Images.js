@@ -27,11 +27,11 @@ class Images extends Component {
                         {film.title}
                     </p>
                 </div>
-                <div className='movieDescriptionDiv'>
+                {/* <div className='movieDescriptionDiv'>
                     <p className='movieDescription'>
                         {film.description}
                     </p>
-                </div>
+                </div> */}
                 
             </div>
         ) // end return

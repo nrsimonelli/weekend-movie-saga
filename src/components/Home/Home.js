@@ -23,7 +23,7 @@ class Home extends Component {
                     subtitle='movie saga'
                     return='return'
                 />
-                
+                <div className='hailMary'>
                 {this.props.reduxState.movieReducer.map((x, key) => (
                     <Images 
                         key={key}
@@ -33,12 +33,7 @@ class Home extends Component {
                         description={x.description}
                     />
                 ))}
-                
-               
-                
-                
-              
-
+                </div>
                
             </div>
         ) // end return

@@ -28,26 +28,62 @@ body {
 }
 /* <Image /> */
 .imageCard {
-  background-color: var(--grey);
-  width: 100%;
+  background-color: var(--highlight);
+  width: 99%;
   height: 300px;
-  margin: 0;
-  padding: 10px;
-  
+  margin: 2px;
+  padding: 2px;
+  display: inline-block;
+  padding-bottom: 20vh;
   
 }
 .imageDiv{
-  background-color: var(--secondary);
+  background-color: var(--highlight);
   width: 40%;
   height: 100%;
+  display: block;
+  text-align: center;
+  padding-bottom: 0px;
+  padding-top: 0px;
+  display: inline-block;
+}
+img {
+  text-align: center;
+  margin-top: 14px;
 }
 .movieTitle {
-  background-color: var(--ground);
-
+  background-color: var(--highlight);
+  float: right;
+  width: 59vw;
+  height: 200px;
+  margin-right: 0%;
+  top: 0px;
+  margin-top: 65px;
+  text-align: left;
 }
-.movieDescriptionDiv {
+.movieTitleText{
+  color: var(--dark);
+  font-size: 2rem;
+  font-weight: 400;
+  padding-right: 0vw;
+  margin-left: 20px;
+}
+.movieTitleText:hover{
+  color: var(--contrast);
+  font-style: italic;
+  font-weight: 700;
+  font-size: 2.1rem;
+}
+/* .movieDescriptionDiv {
   background-color: var(--primary);
-
+  width: 59vw;
+  float: right;
+  right: 0px;
+  z-index: 3;
+  
+} */
+.hailMary{
+  padding-top: 35vh;
 }
 
 /* <Header /> */
@@ -60,6 +96,7 @@ body {
   width: 100%;
   height: 35vh;
   min-height: 240px;
+  z-index: 9;
 }
 .title {
   font-size: 4rem;
@@ -90,6 +127,10 @@ body {
   font-weight: 200;
   letter-spacing: 0.2rem;
 }
+.navigation button:hover {
+  font-size: 1.7rem;
+  font-weight: 400;
+}
 .navigation {
   color: var(--secondary);
   font-size: 1.7rem;
@@ -100,3 +141,4 @@ body {
   top: 2vh;
   right: 3vw;
 }
+
